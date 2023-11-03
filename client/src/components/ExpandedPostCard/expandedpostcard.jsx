@@ -532,7 +532,7 @@ const ExpandedPostCard = ({ post }) => {
                         </div>
 
                         <div className={styles.commentpost}>
-                            <input
+                            {/* <input
                                 type="text"
                                 value={commentText}
                                 onChange={handleCommentTextChange}
@@ -540,7 +540,7 @@ const ExpandedPostCard = ({ post }) => {
                                 placeholder="Add a comment..."
                                 className={styles.commentInputField}
                             />
-
+ */}
                             <TextEditor className={styles.txtEditor} onContentChange={handleCommentTextChange} value={commentText} />
 
                             <Button title="Add Comment" onClick={handlePostComment} className={styles.postButton}>
