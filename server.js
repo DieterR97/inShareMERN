@@ -3,6 +3,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
+const path = require('path');
 
 require('dotenv/config')
 
@@ -51,5 +52,9 @@ const PORT = process.env.PORT || 5000;
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));
 }
+
+app.get('*', (request, response) => {
+    response.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
 
 app.listen(PORT, () => { console.log(`Server started at port: ${PORT}`) })
