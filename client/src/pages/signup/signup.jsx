@@ -45,14 +45,19 @@ function SignUp() {
       const url = `/api/registerUser/`;
       const { userInfo: res } = await axios.post(url, userInfo);
 
-      console.log(res.message);
+      // console.log(res.message);
 
+      if (res.success) {
+        console.log(res.message);
+        // Registration was successful, navigate to the desired page.
+        // Navigate to "/" only if registration was successful
+        navigate("/");
+      } else {
+        // Handle the case where registration is not successful.
+        setError(res.message);
+      }
       // window.location = "/";
 
-      // Navigate to "/" only if registration was successful
-      if (res.success) {
-        navigate("/");
-      }
     } catch (error) {
       if (
         error.response &&
@@ -64,9 +69,7 @@ function SignUp() {
         setError(error)
       }
     }
-
     // navigate("/");
-
   };
 
   return (
