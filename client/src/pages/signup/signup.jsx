@@ -47,15 +47,15 @@ function SignUp() {
 
       // console.log(res.message);
 
-      if (res.success) {
-        console.log(res.message);
-        // Registration was successful, navigate to the desired page.
-        // Navigate to "/" only if registration was successful
-        navigate("/");
-      } else {
-        // Handle the case where registration is not successful.
-        setError(res.message);
-      }
+      // if (res.success) {
+      //   console.log(res.message);
+      //   // Registration was successful, navigate to the desired page.
+      //   // Navigate to "/" only if registration was successful
+      //   navigate("/");
+      // } else {
+      //   // Handle the case where registration is not successful.
+      //   setError(res.message);
+      // }
 
       window.location = "/";
 
