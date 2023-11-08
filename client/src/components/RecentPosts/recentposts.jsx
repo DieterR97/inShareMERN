@@ -32,20 +32,11 @@ const ClickablePost = ({ post, author }) => {
 
       <div className={styles.postname}>
 
-        {author === undefined &&
-          (
-            <>
-            <p>By <span className='LatoFont' style={{ color: "red" }}>[deleted]</span></p> &bull;
-            </>
-          )
-        }
-        {author !== undefined &&
-          (
-            <>
-            <p>By <span style={{ color: "#F16236" }}>{author}</span></p> &bull;
-            </>
-          )
-        }
+        {author === 'undefined' ? (
+          <p>By <span className='LatoFont' style={{ color: "red" }}>[deleted]</span></p>
+        ) : (
+          <p>By <span style={{ color: "#F16236" }}>{author}</span></p>
+        )}
 
         <p>• {formatDate(post.date)}</p>
       </div>
