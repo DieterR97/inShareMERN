@@ -193,7 +193,7 @@ const TopNavBar = ({ setSortBy, setSelectedCategory, setRandomizePosts, setAddNe
 
       <div className="navbarInnerBottom d-flex align-items-end">
 
-        <div className="Sidebar"></div>
+        {/* <div className="Sidebar"></div> */}
 
         <div className="navbarInnerBottomLeft">
 
