@@ -47,8 +47,12 @@ function SignUp() {
 
       console.log(res.message);
 
-      window.location = "/";
+      // window.location = "/";
 
+      // Navigate to "/" only if registration was successful
+      if (res.success) {
+        navigate("/");
+      }
     } catch (error) {
       if (
         error.response &&
@@ -56,14 +60,14 @@ function SignUp() {
         error.response.status <= 500
       ) {
         setError(error.response.data.message);
+      } else {
+        setError(error)
       }
     }
 
-    navigate("/");
+    // navigate("/");
 
   };
-
-
 
   return (
     <div className={styles.container}>
@@ -167,7 +171,7 @@ function SignUp() {
                   Show Password
                 </label>
               </div>
-              {error && <div>{error}</div>}
+              {error && <div>{error.message}</div>}
               <div className="text-center">
                 <button style={{ width: '50%' }} className={styles.formbtn} onClick={handleSignUp}>
                   Sign Up

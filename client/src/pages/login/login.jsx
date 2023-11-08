@@ -163,7 +163,7 @@ function Login() {
               {error && <div style={{ color: "red", fontWeight: "bold" }}>{error}</div>}
 
               <div className="mb-4">
-                <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0">Forgot your password?</a>
+                <a href="#">Forgot your password?</a>
               </div>
               <div className="text-center">
                 <button
