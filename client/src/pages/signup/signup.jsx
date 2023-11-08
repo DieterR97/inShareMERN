@@ -56,7 +56,8 @@ function SignUp() {
         // Handle the case where registration is not successful.
         setError(res.message);
       }
-      // window.location = "/";
+
+      window.location = "/";
 
     } catch (error) {
       if (
